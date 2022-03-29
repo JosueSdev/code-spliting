@@ -10,7 +10,7 @@ const Pokemon = React.lazy(() => import(
 function App() {
   return (
     <div className="App">
-      <Suspense fallback="loading..."><Pokemon /></Suspense>
+      <Suspense fallback="loading...">{false && <Pokemon />}</Suspense>
     </div>
   );
 }
