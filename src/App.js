@@ -1,10 +1,16 @@
+import React, { Suspense } from 'react';
+
 import './App.css';
-import Pokemon from './Pokemon';
+
+const Pokemon = React.lazy(() => import(
+  /* webpackChunkName: "PokeComponent" */
+  './Pokemon'
+));
 
 function App() {
   return (
     <div className="App">
-      <Pokemon />
+      <Suspense fallback="loading..."><Pokemon /></Suspense>
     </div>
   );
 }
